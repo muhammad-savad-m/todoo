@@ -16,7 +16,9 @@ function App() {
         <div key={a.id}>
             <p>{a.title}</p>
             <p>status:{a.completed?"completed":"pending"}</p>
-            <button onClick={()=>dispatch(complete(true))}>finish</button>
+           <button onClick={() => dispatch(complete(a.id))}>
+  {a.completed ? "Undo" : "Finish"}
+</button>
             <button onClick={()=>dispatch(deleteTodo(a.id))}>delete</button>
         </div>
        ))}
